@@ -1,1 +1,118 @@
+# Authentication Vulnerabilities - Study Notes
 
+## Core Concepts
+
+### What is Authentication?
+Authentication is the process of verifying the identity of a user or client. It's integral to web security since websites are exposed to anyone connected to the internet.
+
+### Authentication vs Authorization
+- **Authentication**: Verifies that a user is who they claim to be
+- **Authorization**: Verifies whether a user is allowed to perform specific actions
+- Example: Authentication confirms Carlos123 is the real account owner; authorization determines what Carlos123 can access or modify
+
+## Types of Authentication Factors
+
+### Three Main Categories:
+1. **Knowledge Factors** ("Something you know")
+   - Passwords
+   - Security question answers
+   
+2. **Possession Factors** ("Something you have")
+   - Mobile phones
+   - Security tokens
+   - Physical objects
+   
+3. **Inherence Factors** ("Something you are/do")
+   - Biometrics
+   - Behavioral patterns
+
+## How Authentication Vulnerabilities Arise
+
+### Two Primary Ways:
+1. **Weak Authentication Mechanisms**
+   - Fail to adequately protect against brute-force attacks
+   - Insufficient security controls
+   
+2. **Logic Flaws and Poor Implementation**
+   - Allow complete bypass of authentication mechanisms
+   - Also called "broken authentication"
+   - Logic flaws in authentication are particularly critical due to security implications
+
+## Impact of Vulnerable Authentication
+
+### Severity Levels:
+- **High-privileged account compromise**: Full application control, potential access to internal infrastructure
+- **Low-privileged account compromise**: Access to sensitive business data, additional attack surface
+- **Any account compromise**: Access to data the attacker shouldn't have, potential stepping stone for further attacks
+
+### Key Point:
+High-severity attacks often impossible from public pages but may be possible from internal pages accessed through compromised accounts.
+
+## Main Vulnerability Categories
+
+### 1. Password-based Login Vulnerabilities
+- Brute-force attacks
+- Weak password policies
+- Poor password reset mechanisms
+
+### 2. Multi-factor Authentication Vulnerabilities
+- Bypass techniques
+- Implementation flaws
+- Token vulnerabilities
+
+### 3. Other Authentication Mechanism Vulnerabilities
+- Session management issues
+- Third-party authentication problems
+- OAuth implementation flaws
+
+## Specific Vulnerability: Password Reset Poisoning
+- Manipulation of password reset functionality
+- Can lead to account takeover
+- Often involves manipulating reset links or tokens
+
+## Prevention Principles
+
+### Key Security Measures:
+- Implement robust brute-force protection
+- Use secure coding practices
+- Employ multiple authentication factors
+- Regular security testing and code review
+- Follow established security frameworks
+- Monitor for suspicious authentication attempts
+
+## Testing and Learning Resources
+
+### Practical Application:
+- Authentication labs available for hands-on practice
+- Deliberately vulnerable targets for testing
+- Username and password lists provided for enumeration exercises
+- OAuth authentication labs for advanced study
+
+## Critical Security Considerations
+
+### Why Authentication Security Matters:
+- Direct relationship between authentication and overall security
+- Vulnerabilities expose additional attack surface
+- Foundation for all other security measures
+- Critical for protecting sensitive data and functionality
+
+### Assessment Approach:
+- Identify authentication mechanisms in use
+- Test for common vulnerabilities
+- Evaluate implementation quality
+- Consider bypass possibilities
+- Assess impact potential
+
+## Advanced Topics
+
+### Third-party Authentication:
+- OAuth vulnerabilities
+- Social login security issues
+- Identity provider dependencies
+- Integration security concerns
+
+### Security Architecture:
+- Defense in depth principles
+- Multiple authentication factors
+- Secure session management
+- Continuous monitoring and alerting
